@@ -1,0 +1,2 @@
+ignore = Path */vendor
+ignore = Path */node_modules
