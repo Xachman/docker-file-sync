@@ -1,6 +1,6 @@
 #!/bin/bash
 
-run_unison="unison -auto -batch /mnt/droplet /unison"
+run_unison="unison -auto -batch -perms 0 /mnt/droplet /unison"
 run_sftp="sshfs -o allow_other,default_permissions $TARGET /mnt/droplet"
 echo "$run_sftp"
 if [ -n "$TARGET" ]; then
