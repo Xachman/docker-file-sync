@@ -22,7 +22,7 @@ sync:
     - /path/to/id_rsa:/root/.ssh/id_rsa
     - /path/to/known_hosts:/root/.ssh/known_hosts
     - /path/to/default.prf:/root/.unison/default.prf
-    - /path/to/known_hosts:/unison
+    - /path/to/files/on/host:/unison
   environment:
     TARGET: user@hostip:/path/to/files
 ~~~
