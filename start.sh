@@ -3,7 +3,7 @@
 DROPLET="/mnt/droplet"
 
 run_unison="unison -auto -batch -perms 0 $DROPLET /unison"
-run_sftp="sshfs -o allow_other,default_permissions $TARGET $DROPLET"
+run_sftp="sshfs -o allow_other,default_permissions,reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 $TARGET $DROPLET"
 echo "$run_sftp"
 if [ -n "$TARGET" ]; then
     $run_sftp
