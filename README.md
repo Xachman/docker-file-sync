@@ -29,7 +29,7 @@ sync:
 
 ### Building 
 
-On docker for windows I had to first build a sync container because of permissions when using a volume for host id_rsa
+On docker for windows I had to first build a sync image because of permissions when using a volume for host id_rsa
 
 ~~~
 FROM xachman/docker-file-sync
@@ -43,14 +43,14 @@ RUN chmod 600 /root/.ssh/
 If we build with 
 
 ~~~
-docker build -t sync-container .
+docker build -t sync-image .
 ~~~
 
 Then we can use docker-compose with that image
 
 ~~~
 sync:
-  image: sync-container
+  image: sync-image
   privileged: true
   volumes:
     - /path/to/default.prf:/root/.unison/default.prf
